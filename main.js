@@ -10,37 +10,37 @@ function addTextToExcerciseSolution(newText){
 }
 
 function numberSystemExercise(){
-	var number = randomNumber(20,200);
-	var originBase = randomNumber(1, 16);
-	var originBaseNumber = decimalToBase(number, originBase);
-	var newBase = randFromArray([2, 4, 8, 10, 16]);
+	var number = randomizer.randomNumber(20,200);
+	var originBase = randomizer.randomNumber(1, 16);
+	var originBaseNumber = numberSytems.decimalToBase(number, originBase);
+	var newBase = randomizer.randFromArray([2, 4, 8, 10, 16]);
 	while(newBase == originBase){
 		console.log("doh, that was the same base");
-		newBase = randFromArray([2, 4, 8, 10, 16]);
+		newBase = randomizer.randFromArray([2, 4, 8, 10, 16]);
 	}
 	// originBaseNumber = "54";
 	// originBase = 6;
 	// newBase = 10;
 
 	addTextToExcercise("Die Zahl " + originBaseNumber + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase + "<br/>");
-	addTextToExcerciseSolution("Das Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
+	addTextToExcerciseSolution("Das Ergebnis ist " + numberSytems.numberWithBaseToBase(originBaseNumber, originBase, newBase));
 }
 
 function ieeExercise(){
 	// Rand Number
 	// TODO decrease the randomnes for 0 - we want more 0s!!!
-	var n = randomNumber(1,100);
+	var n = randomizer.randomNumber(1,100);
 	// TODO REMOVE!
 	// n = 0;
 	// Comma Value
 	// TODO make functionality to add multiple of these numbers
-	n = n+niceRandomCommaNumber();
+	n = n+randomizer.niceRandomCommaNumber();
 	// Negative
-	if(randomNumber(1,2) == 1){
+	if(randomizer.randomNumber(1,2) == 1){
 		n = -n;
 	}
 
-	if(randomYesNo()){
+	if(randomizer.randomYesNo()){
 		addTextToExcercise("Dezimal zu IEEE 754<br/>");
 		addTextToExcercise(n + "<br/>");
 		addTextToExcerciseSolution("Das Ergebnis ist " + toIEEE754SingleString(n) + "<br/>");
@@ -55,29 +55,29 @@ function ieeExercise(){
 function binExercise(){
 
 	// Rand Number
-	var n = randomNumber(1,100);
-	if(randomNumber(1,2) == 1){
+	var n = randomizer.randomNumber(1,100);
+	if(randomizer.randomNumber(1,2) == 1){
 		n = -n;
 	}
-	if(randomYesNo()){
+	if(randomizer.randomYesNo()){
 
 		addTextToExcercise("Dezimal zu Binaer<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + decimalToBase(n, 2) + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + numberSytems.decimalToBase(n, 2) + "<br/>");
 	}else{
 		addTextToExcercise("Binaer zu Dezimal<br/>");
-		addTextToExcercise(decimalToBase(n, 2) + "<br/>");
+		addTextToExcercise(numberSytems.decimalToBase(n, 2) + "<br/>");
 		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
 	}
 }
 
 function twosComplementExercise(bit, max){
 	// Rand Number
-	var n = randomNumber(1,max);
-	if(randomNumber(1,2) == 1){
+	var n = randomizer.randomNumber(1,max);
+	if(randomizer.randomNumber(1,2) == 1){
 		n = -n;
 	}
-	if(randomYesNo()){
+	if(randomizer.randomYesNo()){
 		addTextToExcercise("Dezimal zu Zweier Komplement<br/>");
 		addTextToExcercise(n + "<br/>");
 		addTextToExcerciseSolution("Das Ergebnis ist " + twosComplement(n, bit) + "<br/>");
