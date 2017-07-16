@@ -1,8 +1,8 @@
 function clearExercise(){
-			document.getElementById("exercise1").innerText = "";
+			document.getElementById("exercise1").innerHTML = "";
 		}
 		function addTextToExcercise(newText){
-			document.getElementById("exercise1").innerText = document.getElementById("exercise1").innerText + newText;
+			document.getElementById("exercise1").innerHTML = document.getElementById("exercise1").innerHTML + newText;
 		}
 
 		function numberSystemExercise(){
@@ -19,7 +19,7 @@ function clearExercise(){
 			// newBase = 10;
 
 			addTextToExcercise("Die Zahl " + originBaseNumber + " mit der Basis  " + originBase + " soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
-			addTextToExcercise("\nDas Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
+			addTextToExcercise("<br/>Das Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
 		}
 
 		function ieeExercise(){
@@ -32,8 +32,14 @@ function clearExercise(){
 				n = -n;
 			}
 
-			addTextToExcercise(n + "\n");
-			addTextToExcercise(toIEEE754SingleString(n));
+			if(randomYesNo()){
+				addTextToExcercise(n + "<br/>");
+				addTextToExcercise(toIEEE754SingleString(n) + "<br/>");
+			}else{
+				addTextToExcercise(toIEEE754SingleString(n) + "<br/>");
+				addTextToExcercise(n + "<br/>");
+
+			}
 		}
 
 		function binExercise(){
@@ -43,9 +49,13 @@ function clearExercise(){
 			if(randomNumber(1,3) == 1){
 				n = -n;
 			}
-
-			addTextToExcercise(n + "\n");
-			addTextToExcercise(numberWithTenToBase(n, 2) + "\n");
+			if(randomYesNo()){
+				addTextToExcercise(n + "<br/>");
+				addTextToExcercise(numberWithTenToBase(n, 2) + "<br/>");
+			}else{
+				addTextToExcercise(numberWithTenToBase(n, 2) + "<br/>");
+				addTextToExcercise(n + "<br/>");
+			}
 		}
 
 		function twosComplementExercise(bit, max){
@@ -54,33 +64,37 @@ function clearExercise(){
 			if(randomNumber(1,3) == 1){
 				n = -n;
 			}
-
-			addTextToExcercise(n + "\n");
-			addTextToExcercise(twosComplement(n, bit) + "\n");
-			// addTextToExcercise(numberWithTenToBase(n, 2) + "\n");
+			if(randomYesNo()){
+				addTextToExcercise(n + "<br/>");
+				addTextToExcercise(twosComplement(n, bit) + "<br/>");
+			}else{
+				addTextToExcercise(twosComplement(n, bit) + "<br/>");
+				addTextToExcercise(n + "<br/>");
+			}
+			
 		}
 
 		function newExercise(){
 			clearExercise();
 
-			addTextToExcercise("\n\n");
-			addTextToExcercise("Aufgabe 1 - Zahlensysteme:\n");
+			addTextToExcercise("<br/><br/>");
+			addTextToExcercise("<b>Aufgabe 1 - Zahlensysteme:</b><br/>");
 
 			numberSystemExercise();
 
-			addTextToExcercise("\n\n");
-			addTextToExcercise("Aufgabe 2 - IEEE 754:\n");
+			addTextToExcercise("<br/><br/>");
+			addTextToExcercise("<b>Aufgabe 2 - IEEE 754:</b><br/>");
 			ieeExercise();
-			addTextToExcercise("\n\n");
-			addTextToExcercise("Aufgabe 3 - Binaer - Dezimal:\n");
+			addTextToExcercise("<br/><br/>");
+			addTextToExcercise("<b>Aufgabe 3 - Binaer - Dezimal:</b><br/>");
 			
 			binExercise();
-			addTextToExcercise("\n\n");
-			addTextToExcercise("Aufgabe 3 - Zweierkomplement (8bit):\n");
+			addTextToExcercise("<br/><br/>");
+			addTextToExcercise("<b>Aufgabe 4 - Zweierkomplement (8bit):</b><br/>");
 			twosComplementExercise(8, 100);
 
-			addTextToExcercise("\n\n");
-			addTextToExcercise("Aufgabe 4 - Zweierkomplement (16bit):\n");
+			addTextToExcercise("<br/><br/>");
+			addTextToExcercise("<b>Aufgabe 5 - Zweierkomplement (16bit):</b><br/>");
 			
 			twosComplementExercise(16, 1000);
 			

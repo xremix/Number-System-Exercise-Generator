@@ -12,6 +12,12 @@ function randomNumber(min, max){
 	var x = (Math.random() * (max - min)) + min;
 	return parseInt(x);
 }
+function randomYesNo(){
+	var min = 1;
+	var max = 3;
+	var x = (Math.random() * (max - min)) + min;
+	return parseInt(x) == 1;
+}
 function randFromArray(arr){
 	return arr[randomNumber(0, arr.length)];
 }
