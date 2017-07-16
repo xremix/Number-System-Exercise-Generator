@@ -9,7 +9,7 @@
 	<div class="container">
 		<h1>Beispielaufgaben Umrechnung Zahlensysteme</h1>
 		<div class="alert alert-info" role="alert">
-		Mehr übungen findest du <a href="https://github.com/xremix/Number-System-Exercise-Generator" target="_blank">hier</a>
+			Mehr übungen findest du <a href="https://github.com/xremix/Number-System-Exercise-Generator" target="_blank">hier</a>
 		</div>
 
 		<button onclick="getExercise()" class="btn btn-default">Neue Aufgabe</button>
@@ -44,20 +44,18 @@
 			var originBase = randomNumber(1, 16);
 			var originBaseNumber = numberWithTenToBase(number, originBase);
 			var newBase = randFromArray([2, 4, 8, 10, 16]);
+			// originBaseNumber = "54";
+			// originBase = 6;
+			// newBase = 10;
+
+			addTextToExcercise("\n\n");
+			addTextToExcercise("Die Zahl " + originBaseNumber + " mit der Basis  " + originBase + " soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
+			addTextToExcercise("\nDas Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
+			addTextToExcercise("\n\n");
+			// console.log(numberWithBaseToBase(100101, 2, 16));
 		}
-	// originBaseNumber = "54";
-	// originBase = 6;
-	// newBase = 10;
-
-	addTextToExcercise("\n\n");
-	addTextToExcercise("Die Zahl " + originBaseNumber + " mit der Basis  " + originBase + " soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
-	addTextToExcercise("\nDas Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
-	addTextToExcercise("\n\n");
-	// console.log(numberWithBaseToBase(100101, 2, 16));
 
 
-
-
-</script>
+	</script>
 </body>
 </html>
