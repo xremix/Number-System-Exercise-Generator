@@ -20,3 +20,4 @@ The `C` Tool generates the following exercies:
 - Caculate decimal number to binary number
 - Caculate decimal number to number of standard IEEE 754
 
+![Analytics](https://ga-beacon.appspot.com/UA-40522413-9/Number-System-Exercise-Generator/readme?pixel)
