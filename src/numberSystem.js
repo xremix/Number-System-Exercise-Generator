@@ -9,6 +9,7 @@ function numberWithBaseToBase(number, originBase, newBase){
 	return numberWithTenToBase(tenBase, newBase);
 }
 function randomNumber(min, max){
+	max++;
 	var x = (Math.random() * (max - min)) + min;
 	return parseInt(x);
 }
@@ -29,7 +30,7 @@ function randomYesNo(){
 	return parseInt(x) == 1;
 }
 function randFromArray(arr){
-	return arr[randomNumber(0, arr.length)];
+	return arr[randomNumber(0, arr.length-1)];
 }
 
 function twosCompl(d){

@@ -36,7 +36,7 @@ function ieeExercise(){
 	// TODO make functionality to add multiple of these numbers
 	n = n+niceRandomCommaNumber();
 	// Negative
-	if(randomNumber(1,3) == 1){
+	if(randomNumber(1,2) == 1){
 		n = -n;
 	}
 
@@ -56,7 +56,7 @@ function binExercise(){
 
 	// Rand Number
 	var n = randomNumber(1,100);
-	if(randomNumber(1,3) == 1){
+	if(randomNumber(1,2) == 1){
 		n = -n;
 	}
 	if(randomYesNo()){
@@ -74,7 +74,7 @@ function binExercise(){
 function twosComplementExercise(bit, max){
 	// Rand Number
 	var n = randomNumber(1,max);
-	if(randomNumber(1,3) == 1){
+	if(randomNumber(1,2) == 1){
 		n = -n;
 	}
 	if(randomYesNo()){
@@ -124,5 +124,3 @@ function showSolutions(){
 }
 
 newExercise();
-
-console.log(niceRandomCommaNumber());
