@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gaussian Ellimination method</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Beispielaufgaben Umrechnung Zahlensysteme</h1>
+	<button onclick="getExercise()" class="btn btn-default">Neue Aufgabe</button>
+
+	<div id="exercise1"></div>
+	</div>
+	<script type="text/javascript">
+		function numberWithTenToBase(number, base){
+			return number.toString(base);
+		}
+		function numberWithBaseToTen(number, originBase){
+			return parseInt(number, originBase)
+		}
+		function numberWithBaseToBase(number, originBase, newBase){
+			var tenBase = numberWithBaseToTen(number, originBase);
+			return numberWithTenToBase(tenBase, newBase);
+		}
+		function randomNumber(min, max){
+			var x = (Math.random() * (max - min)) + min;
+			return parseInt(x);
+		}
+
+		function randFromArray(arr){
+			return arr[randomNumber(0, arr.length)];
+		}
+		function addTextToExcercise(newText){
+			document.getElementById("exercise1").innerText = document.getElementById("exercise1").innerText + newText;
+		}
+
+		function getExercise(){
+			var number = randomNumber(1,200);
+			var originBase = randomNumber(1, 16);
+			var originBaseNumber = numberWithTenToBase(number, originBase);
+			var newBase = randFromArray([2, 4, 8, 10, 16]);
+
+	// originBaseNumber = "54";
+	// originBase = 6;
+	// newBase = 10;
+
+	addTextToExcercise("Die Zahl " + originBaseNumber + " mit der Basis  " + originBase + " soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
+	addTextToExcercise("\nDas Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
+	addTextToExcercise("\n\n\n");
+	// console.log(numberWithBaseToBase(100101, 2, 16));
+}
+
+
+
+</script>
+</body>
+</html>
