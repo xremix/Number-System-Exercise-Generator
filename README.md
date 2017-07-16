@@ -10,7 +10,8 @@ Result is 5
 
 ## Binary
 The `C` Tool generates the following exercies:
-- Calculate number with base to another base (no solution yet)
+- Calculate number with base to another base (no solution yet, better use the website for that)
 - Caculate decimal number to binary number of two's complement
 - Caculate decimal number to binary number
 - Caculate decimal number to number of standard IEEE 754
+
