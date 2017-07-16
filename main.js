@@ -12,7 +12,7 @@ function addTextToExcerciseSolution(newText){
 function numberSystemExercise(){
 	var number = randomNumber(20,200);
 	var originBase = randomNumber(1, 16);
-	var originBaseNumber = numberWithTenToBase(number, originBase);
+	var originBaseNumber = decimalToBase(number, originBase);
 	var newBase = randFromArray([2, 4, 8, 10, 16]);
 	while(newBase == originBase){
 		console.log("doh, that was the same base");
@@ -63,10 +63,10 @@ function binExercise(){
 
 		addTextToExcercise("Dezimal zu Binaer<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + numberWithTenToBase(n, 2) + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + decimalToBase(n, 2) + "<br/>");
 	}else{
 		addTextToExcercise("Binaer zu Dezimal<br/>");
-		addTextToExcercise(numberWithTenToBase(n, 2) + "<br/>");
+		addTextToExcercise(decimalToBase(n, 2) + "<br/>");
 		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
 	}
 }

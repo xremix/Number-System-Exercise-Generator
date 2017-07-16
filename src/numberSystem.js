@@ -1,12 +1,12 @@
-function numberWithTenToBase(number, base){
+function decimalToBase(number, base){
 	return number.toString(base);
 }
-function numberWithBaseToTen(number, originBase){
+function numberWithBaseToDecimal(number, originBase){
 	return parseInt(number, originBase)
 }
 function numberWithBaseToBase(number, originBase, newBase){
-	var tenBase = numberWithBaseToTen(number, originBase);
-	return numberWithTenToBase(tenBase, newBase);
+	var tenBase = numberWithBaseToDecimal(number, originBase);
+	return decimalToBase(tenBase, newBase);
 }
 function randomNumber(min, max){
 	max++;
