@@ -1,12 +1,15 @@
 # Number System Exercise Generator
-This project will generate sample exercies
+This project is intended for students to practices exercies with number systems.
+This site will generate exercise for you - as well as their solutions.
 
-## Number System
+## Exercise Website
 [This Website](https://rawgit.com/xremix/Number-System-Exercise-Generator/master/number-system-exercises.html) will generate exercies like
-```
-Calculate the number 101 with base 2 to a number with base 10
-Result is 5
-```
+- Convert Number of a base to another base
+- Convert decimal to ieee 754 - or reverse
+- Convert Decimal to binary - or reverse
+- Convert Dezimal to twos complement (8 bit) - or reverse
+- Convert Dezimal to twos complement (16 bit) - or reverse
+
 
 ## Binary
 The `C` Tool generates the following exercies:
