@@ -12,6 +12,16 @@ function randomNumber(min, max){
 	var x = (Math.random() * (max - min)) + min;
 	return parseInt(x);
 }
+function niceRandomCommaNumber(){
+	var ret = 0;
+	var it = randomNumber(0,4);
+	console.log(it);
+	for (var i = 0; i < it; i++) {
+		ret += randFromArray([0, 0.5, 0.25, 0.125, 0.0625])
+	}
+	return ret;
+	
+}
 function randomYesNo(){
 	var min = 1;
 	var max = 3;

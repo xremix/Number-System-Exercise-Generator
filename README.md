@@ -2,6 +2,8 @@
 This project is intended for students to practices exercies with number systems.
 This site will generate exercise for you - as well as their solutions.
 
+The website is completly in german right now
+
 ## Exercise Website
 [This Website](https://rawgit.com/xremix/Number-System-Exercise-Generator/master/number-system-exercises.html) will generate exercies like
 - Convert Number of a base to another base

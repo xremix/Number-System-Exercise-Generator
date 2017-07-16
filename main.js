@@ -34,7 +34,7 @@ function ieeExercise(){
 	// n = 0;
 	// Comma Value
 	// TODO make functionality to add multiple of these numbers
-	n = n+randFromArray([0, 0.5, 0.25, 0.125, 0.0625]);
+	n = n+niceRandomCommaNumber();
 	// Negative
 	if(randomNumber(1,3) == 1){
 		n = -n;
@@ -43,11 +43,11 @@ function ieeExercise(){
 	if(randomYesNo()){
 		addTextToExcercise("Dezimal zu IEEE 754<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution(toIEEE754SingleString(n) + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + toIEEE754SingleString(n) + "<br/>");
 	}else{
 		addTextToExcercise("IEEE 754 zu Dezimal<br/>");
 		addTextToExcercise(toIEEE754SingleString(n) + "<br/>");
-		addTextToExcerciseSolution(n + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
 
 	}
 }
@@ -63,11 +63,11 @@ function binExercise(){
 
 		addTextToExcercise("Dezimal zu Binaer<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution(numberWithTenToBase(n, 2) + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + numberWithTenToBase(n, 2) + "<br/>");
 	}else{
 		addTextToExcercise("Binaer zu Dezimal<br/>");
 		addTextToExcercise(numberWithTenToBase(n, 2) + "<br/>");
-		addTextToExcerciseSolution(n + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
 	}
 }
 
@@ -80,40 +80,39 @@ function twosComplementExercise(bit, max){
 	if(randomYesNo()){
 		addTextToExcercise("Dezimal zu Zweier Komplement<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution(twosComplement(n, bit) + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + twosComplement(n, bit) + "<br/>");
 	}else{
 		addTextToExcercise("Zweier Komplement zu Dezimal<br/>");
 		addTextToExcercise(twosComplement(n, bit) + "<br/>");
-		addTextToExcerciseSolution(n + "<br/>");
+		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
 	}
 	
+}
+
+function addExerciseTitle(title){
+
+
+	addTextToExcercise("<br/><br/>");
+	addTextToExcercise("<b>"+title+"</b><br/>");
 }
 
 function newExercise(){
 	clearExercise();
 
-	addTextToExcercise("<br/><br/>");
-	addTextToExcercise("<b>Aufgabe 1 - Zahlensysteme:</b><br/>");
-
+	addExerciseTitle("Aufgabe 1 - Zahlensysteme:");
 	numberSystemExercise();
 
-	addTextToExcercise("<br/><br/>");
-	addTextToExcercise("<b>Aufgabe 2 - IEEE 754:</b><br/>");
-	ieeExercise();
-	addTextToExcercise("<br/><br/>");
-	addTextToExcercise("<b>Aufgabe 3 - Binaer - Dezimal:</b><br/>");
-	
+	addExerciseTitle("Aufgabe 2 - Binaer - Dezimal:");
 	binExercise();
-	addTextToExcercise("<br/><br/>");
-	addTextToExcercise("<b>Aufgabe 4 - Zweierkomplement (8bit):</b><br/>");
+
+	addExerciseTitle("Aufgabe 3 - Zweierkomplement (8bit):");
 	twosComplementExercise(8, 100);
 
-	addTextToExcercise("<br/><br/>");
-	addTextToExcercise("<b>Aufgabe 5 - Zweierkomplement (16bit):</b><br/>");
-	
+	addExerciseTitle("Aufgabe 4 - Zweierkomplement (16bit):");
 	twosComplementExercise(16, 1000);
-	
 
+	addExerciseTitle("Aufgabe 5 - IEEE 754:");
+	ieeExercise();
 }
 function showSolutions(){
 
@@ -125,3 +124,5 @@ function showSolutions(){
 }
 
 newExercise();
+
+console.log(niceRandomCommaNumber());
