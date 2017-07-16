@@ -21,7 +21,7 @@ function twosComplement(value, bitCount) {
     }
   }
   
-  return `0b${binaryStr}`;
+  return `${binaryStr}`;
 }
 
 

@@ -1,19 +1,22 @@
 function clearExercise(){
-			document.getElementById("exercise1").innerHTML = "";
-		}
-		function addTextToExcercise(newText){
-			document.getElementById("exercise1").innerHTML = document.getElementById("exercise1").innerHTML + newText;
-		}
+	document.getElementById("exercise1").innerHTML = "";
+}
+function addTextToExcercise(newText){
+	document.getElementById("exercise1").innerHTML = document.getElementById("exercise1").innerHTML + newText;
+}
+function addTextToExcerciseSolution(newText){
+	addTextToExcercise('<span class="solutionText">' + newText +"</span>");
+}
 
-		function numberSystemExercise(){
-			var number = randomNumber(20,200);
-			var originBase = randomNumber(1, 16);
-			var originBaseNumber = numberWithTenToBase(number, originBase);
-			var newBase = randFromArray([2, 4, 8, 10, 16]);
-			while(newBase == originBase){
-				console.log("doh, that was the same base");
-				newBase = randFromArray([2, 4, 8, 10, 16]);
-			}
+function numberSystemExercise(){
+	var number = randomNumber(20,200);
+	var originBase = randomNumber(1, 16);
+	var originBaseNumber = numberWithTenToBase(number, originBase);
+	var newBase = randFromArray([2, 4, 8, 10, 16]);
+	while(newBase == originBase){
+		console.log("doh, that was the same base");
+		newBase = randFromArray([2, 4, 8, 10, 16]);
+	}
 			// originBaseNumber = "54";
 			// originBase = 6;
 			// newBase = 10;
@@ -33,11 +36,13 @@ function clearExercise(){
 			}
 
 			if(randomYesNo()){
+				addTextToExcercise("Dezimal zu IEEE 754<br/>");
 				addTextToExcercise(n + "<br/>");
-				addTextToExcercise(toIEEE754SingleString(n) + "<br/>");
+				addTextToExcerciseSolution(toIEEE754SingleString(n) + "<br/>");
 			}else{
+				addTextToExcercise("IEEE 754 zu Dezimal<br/>");
 				addTextToExcercise(toIEEE754SingleString(n) + "<br/>");
-				addTextToExcercise(n + "<br/>");
+				addTextToExcerciseSolution(n + "<br/>");
 
 			}
 		}
@@ -50,11 +55,14 @@ function clearExercise(){
 				n = -n;
 			}
 			if(randomYesNo()){
+
+				addTextToExcercise("Dezimal zu Binaer<br/>");
 				addTextToExcercise(n + "<br/>");
-				addTextToExcercise(numberWithTenToBase(n, 2) + "<br/>");
+				addTextToExcerciseSolution(numberWithTenToBase(n, 2) + "<br/>");
 			}else{
+				addTextToExcercise("Binaer zu Dezimal<br/>");
 				addTextToExcercise(numberWithTenToBase(n, 2) + "<br/>");
-				addTextToExcercise(n + "<br/>");
+				addTextToExcerciseSolution(n + "<br/>");
 			}
 		}
 
@@ -65,11 +73,13 @@ function clearExercise(){
 				n = -n;
 			}
 			if(randomYesNo()){
+				addTextToExcercise("Dezimal zu Zweier Komplement<br/>");
 				addTextToExcercise(n + "<br/>");
-				addTextToExcercise(twosComplement(n, bit) + "<br/>");
+				addTextToExcerciseSolution(twosComplement(n, bit) + "<br/>");
 			}else{
+				addTextToExcercise("Zweier Komplement zu Dezimal<br/>");
 				addTextToExcercise(twosComplement(n, bit) + "<br/>");
-				addTextToExcercise(n + "<br/>");
+				addTextToExcerciseSolution(n + "<br/>");
 			}
 			
 		}
@@ -100,4 +110,13 @@ function clearExercise(){
 			
 
 		}
+		function showSolutions(){
+
+			var x = document.getElementsByClassName('solutionText');
+			for (var i = 0; i < x.length; i++) {
+				x[i].classList.toggle("show");
+			}
+			// document.('solutionText').toggleClass("show")
+		}
+
 		newExercise();

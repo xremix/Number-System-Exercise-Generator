@@ -9,15 +9,25 @@
 	<script src="src/numberSystem.js"></script>	
 	<script src="src/twosComplement.js"></script>	
 	<script src="src/ieee754.js"></script>	
+	<style type="text/css">
+		.solutionText{
+			color:white;
+		}
+		.solutionText.show{
+			color:black;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
 		<h1>Beispielaufgaben Umrechnung Zahlensysteme</h1>
 		<div class="alert alert-info" role="alert">
+			<b>Markiere den Text um die L&ouml;sungen zu sehen</b>
 			Mehr &Uuml;bungen findest du <a href="https://github.com/xremix/Number-System-Exercise-Generator" target="_blank">hier</a>
 		</div>
 
 		<button onclick="newExercise()" class="btn btn-default">Neue Aufgabe erstellen</button>
+		<button onclick="showSolutions()" class="btn btn-default">L&ouml;sungen</button>
 
 		<div id="exercise1"></div>
 
