@@ -3,6 +3,7 @@ function clearExercise(){
 }
 function addTextToExcercise(newText){
 	document.getElementById("exercise1").innerHTML = document.getElementById("exercise1").innerHTML + newText;
+	console.log(newText);
 }
 function addTextToExcerciseSolution(newText){
 	addTextToExcercise('<span class="solutionText">' + newText +"</span>");
@@ -27,8 +28,10 @@ function numberSystemExercise(){
 
 		function ieeExercise(){
 			// Rand Number
+			// TODO decrease the randomnes for 0 - we want more 0s!!!
 			var n = randomNumber(1,100);
 			// Comma Value
+			// TODO make functionality to add multiple of these numbers
 			n = n+randFromArray([0, 0.5, 0.25, 0.125, 0.0625]);
 			// Negative
 			if(randomNumber(1,3) == 1){
