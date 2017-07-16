@@ -12,33 +12,33 @@
 			Mehr &Uuml;bungen findest du <a href="https://github.com/xremix/Number-System-Exercise-Generator" target="_blank">hier</a>
 		</div>
 
-		<button onclick="getExercise()" class="btn btn-default">Neue Aufgabe</button>
+		<button onclick="newExercise()" class="btn btn-default">Neue Aufgabe erstellen</button>
 
 		<div id="exercise1"></div>
+
+		<div class="panel panel-default" style="margin-top: 100px;">
+		  <div class="panel-heading">
+		  Info
+		  </div>
+		  <div class="panel-body">
+		    - Die Zufallszahl ist eine Zahl zwischen 20-200<br/>
+		    - Die Basis der Zahl ist eine Zahl zwischen 2-16<br/>
+		    - Die Lösungsbasis ist entweder 2, 4, 8, 10 oder 16<br/>
+		  </div>
+		</div>
 	</div>
+	<script src="src/numberSystem.js"></script>	
+	<script src="src/ieee754.js"></script>	
 	<script type="text/javascript">
-		function numberWithTenToBase(number, base){
-			return number.toString(base);
-		}
-		function numberWithBaseToTen(number, originBase){
-			return parseInt(number, originBase)
-		}
-		function numberWithBaseToBase(number, originBase, newBase){
-			var tenBase = numberWithBaseToTen(number, originBase);
-			return numberWithTenToBase(tenBase, newBase);
-		}
-		function randomNumber(min, max){
-			var x = (Math.random() * (max - min)) + min;
-			return parseInt(x);
-		}
-		function randFromArray(arr){
-			return arr[randomNumber(0, arr.length)];
+		
+		function clearExercise(){
+			document.getElementById("exercise1").innerText = "";
 		}
 		function addTextToExcercise(newText){
 			document.getElementById("exercise1").innerText = document.getElementById("exercise1").innerText + newText;
 		}
 
-		function getExercise(){
+		function numberSystemExercise(){
 			var number = randomNumber(20,200);
 			var originBase = randomNumber(1, 16);
 			var originBaseNumber = numberWithTenToBase(number, originBase);
@@ -51,11 +51,75 @@
 			// originBase = 6;
 			// newBase = 10;
 
-			addTextToExcercise("\n\n");
 			addTextToExcercise("Die Zahl " + originBaseNumber + " mit der Basis  " + originBase + " soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
 			addTextToExcercise("\nDas Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
-			addTextToExcercise("\n\n");
 		}
+
+		function ieeExercise(){
+			// Rand Number
+			var n = randomNumber(1,100);
+			// Comma Value
+			n = n+randFromArray([0, 0.5, 0.25, 0.125, 0.0625]);
+			// Negative
+			if(randomNumber(1,3) == 1){
+				n = -n;
+			}
+
+			addTextToExcercise(n + "\n");
+			addTextToExcercise(toIEEE754SingleString(n));
+		}
+
+		function binExercise(){
+
+			// Rand Number
+			var n = randomNumber(1,100);
+			if(randomNumber(1,3) == 1){
+				n = -n;
+			}
+
+			addTextToExcercise(n + "\n");
+			addTextToExcercise(numberWithTenToBase(n, 2) + "\n");
+		}
+
+		function twosComplementExercise(bit, max){
+			// Rand Number
+			var n = randomNumber(1,max);
+			if(randomNumber(1,3) == 1){
+				n = -n;
+			}
+
+			addTextToExcercise(n + "\n");
+			addTextToExcercise(twosComplement(n, bit) + "\n");
+			// addTextToExcercise(numberWithTenToBase(n, 2) + "\n");
+		}
+
+		function newExercise(){
+			clearExercise();
+
+			addTextToExcercise("\n\n");
+			addTextToExcercise("Aufgabe 1 - Zahlensysteme:\n");
+
+			numberSystemExercise();
+
+			addTextToExcercise("\n\n");
+			addTextToExcercise("Aufgabe 2 - IEEE 754:\n");
+			ieeExercise();
+			addTextToExcercise("\n\n");
+			addTextToExcercise("Aufgabe 3 - Binaer - Dezimal:\n");
+			
+			binExercise();
+			addTextToExcercise("\n\n");
+			addTextToExcercise("Aufgabe 3 - Zweierkomplement (8bit):\n");
+			twosComplementExercise(8, 100);
+
+			addTextToExcercise("\n\n");
+			addTextToExcercise("Aufgabe 4 - Zweierkomplement (16bit):\n");
+			
+			twosComplementExercise(16, 1000);
+			
+
+		}
+		newExercise();
 	</script>
 </body>
 </html>
