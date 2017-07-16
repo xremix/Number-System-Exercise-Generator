@@ -22,7 +22,7 @@ function numberSystemExercise(){
 	// originBase = 6;
 	// newBase = 10;
 
-	addTextToExcercise("Die Zahl " + originBaseNumber + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
+	addTextToExcercise("Die Zahl " + originBaseNumber + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase + "<br/>");
 	addTextToExcerciseSolution("Das Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
 }
 
@@ -119,7 +119,7 @@ function showSolutions(){
 
 	var x = document.getElementsByClassName('solutionText');
 	for (var i = 0; i < x.length; i++) {
-		x[i].classList.toggle("show");
+		x[i].classList.toggle("showSolution");
 	}
 	// document.('solutionText').toggleClass("show")
 }
