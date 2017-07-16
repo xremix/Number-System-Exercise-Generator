@@ -22,7 +22,7 @@ function numberSystemExercise(){
 			// originBase = 6;
 			// newBase = 10;
 
-			addTextToExcercise("Die Zahl " + originBaseNumber + " mit der Basis  " + originBase + " soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
+			addTextToExcercise("Die Zahl " + originBaseNumber + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase);
 			addTextToExcercise("<br/>Das Ergebnis ist " + numberWithBaseToBase(originBaseNumber, originBase, newBase));
 		}
 
