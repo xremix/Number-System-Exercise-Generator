@@ -6,7 +6,7 @@ function addTextToExcercise(newText){
 	console.log(newText);
 }
 function addTextToExcerciseSolution(newText){
-	addTextToExcercise('<span class="solutionText">' + newText +"</span>");
+	addTextToExcercise('<span class="solutionText">Das Ergebnis ist ' + newText +"</span>");
 }
 
 function numberSystemExercise(){
@@ -23,7 +23,7 @@ function numberSystemExercise(){
 	// newBase = 10;
 
 	addTextToExcercise("Die Zahl " + originBaseNumber + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase + "<br/>");
-	addTextToExcerciseSolution("Das Ergebnis ist " + numberSytems.numberWithBaseToBase(originBaseNumber, originBase, newBase));
+	addTextToExcerciseSolution(numberSytems.numberWithBaseToBase(originBaseNumber, originBase, newBase));
 }
 
 function ieeExercise(){
@@ -43,17 +43,15 @@ function ieeExercise(){
 	if(randomizer.randomYesNo()){
 		addTextToExcercise("Dezimal zu IEEE 754<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + toIEEE754SingleString(n) + "<br/>");
+		addTextToExcerciseSolution(toIEEE754SingleString(n) + "<br/>");
 	}else{
 		addTextToExcercise("IEEE 754 zu Dezimal<br/>");
 		addTextToExcercise(toIEEE754SingleString(n) + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
-
+		addTextToExcerciseSolution(n + "<br/>");
 	}
 }
 
 function binExercise(){
-
 	// Rand Number
 	var n = randomizer.randomNumber(1,100);
 	if(randomizer.randomNumber(1,2) == 1){
@@ -61,13 +59,13 @@ function binExercise(){
 	}
 	if(randomizer.randomYesNo()){
 
-		addTextToExcercise("Dezimal zu Binaer<br/>");
+		addTextToExcercise("Dezimal zu Bin&auml;r<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + numberSytems.decimalToBase(n, 2) + "<br/>");
+		addTextToExcerciseSolution(numberSytems.decimalToBase(n, 2) + "<br/>");
 	}else{
-		addTextToExcercise("Binaer zu Dezimal<br/>");
+		addTextToExcercise("Bin&auml;r zu Dezimal<br/>");
 		addTextToExcercise(numberSytems.decimalToBase(n, 2) + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
+		addTextToExcerciseSolution(n + "<br/>");
 	}
 }
 
@@ -80,29 +78,26 @@ function twosComplementExercise(bit, max){
 	if(randomizer.randomYesNo()){
 		addTextToExcercise("Dezimal zu Zweier Komplement<br/>");
 		addTextToExcercise(n + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + twosComplement(n, bit) + "<br/>");
+		addTextToExcerciseSolution(twosComplement(n, bit) + "<br/>");
 	}else{
 		addTextToExcercise("Zweier Komplement zu Dezimal<br/>");
 		addTextToExcercise(twosComplement(n, bit) + "<br/>");
-		addTextToExcerciseSolution("Das Ergebnis ist " + n + "<br/>");
+		addTextToExcerciseSolution(n + "<br/>");
 	}
-	
 }
 
 function addExerciseTitle(title){
-
-
 	addTextToExcercise("<br/><br/>");
 	addTextToExcercise("<b>"+title+"</b><br/>");
 }
 
-function newExercise(){
+function newExercises(){
 	clearExercise();
 
 	addExerciseTitle("Aufgabe 1 - Zahlensysteme:");
 	numberSystemExercise();
 
-	addExerciseTitle("Aufgabe 2 - Binaer - Dezimal:");
+	addExerciseTitle("Aufgabe 2 - Bin&auml;r - Dezimal:");
 	binExercise();
 
 	addExerciseTitle("Aufgabe 3 - Zweierkomplement (8bit):");
@@ -123,4 +118,4 @@ function showSolutions(){
 	// document.('solutionText').toggleClass("show")
 }
 
-newExercise();
+newExercises();

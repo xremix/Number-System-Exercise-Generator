@@ -2,10 +2,12 @@
 <html>
 <head>
 	<!-- TODO Translate to Englisch -->
+	<meta charset="UTF-8">
+
 	<title>Beispielaufgaben Zahlensysteme</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 
 	<script src="src/numberSystem.js"></script>	
 	<script src="src/twosComplement.js"></script>	
@@ -23,12 +25,12 @@
 	<div class="container">
 		<h1>Beispielaufgaben Umrechnung Zahlensysteme</h1>
 		<div class="alert alert-info" role="alert">
-			Dokumentation und mehr &Uuml;bungen (als C-Code) findest du <a href="https://github.com/xremix/Number-System-Exercise-Generator" target="_blank">hier</a>
+			Dokumentation und mehr Übungen (als C-Code) findest du <a href="https://github.com/xremix/Number-System-Exercise-Generator" target="_blank">hier</a>
 		</div>
-
-		<button onclick="newExercise()" class="btn btn-default">Neue Aufgabe erstellen</button>
-		<button onclick="showSolutions()" class="btn btn-default">L&ouml;sungen anzeigen</button>
-
+<div class="btn-group btn-group-md" role="group">
+		<button onclick="newExercises()" class="btn btn-default"><i class="fa fa-random"></i> Neue Aufgabe</button>
+		<button onclick="showSolutions()" class="btn btn-default"><i class="fa fa-graduation-cap"></i> Lösungen anzeigen</button>
+</div>
 		<div id="exercise1"></div>
 
 		<div class="panel panel-default" style="margin-top: 80px;">
@@ -40,6 +42,10 @@
 		    - Die Zufallszahl ist eine Zahl zwischen 20-200<br/>
 		    - Die Basis der Zahl ist eine Zahl zwischen 2-16<br/>
 		    - Die Lösungsbasis ist entweder 2, 4, 8, 10 oder 16<br/>
+		    <br/><br/>
+		    Weiterführende Links:<br/>
+		    <a href="https://www.h-schmidt.net/FloatConverter/IEEE754.html">IEE 754 Rechner</a><br/>
+		    <a href="http://www.arndt-bruenner.de/mathe/scripts/Zahlensysteme.htm">Zahlensysteme</a>
 		  </div>
 		</div>
 	</div>
