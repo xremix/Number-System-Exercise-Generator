@@ -23,7 +23,7 @@ function numberSystemExercise(){
 	// newBase = 10;
 
 	addTextToExcercise("Die Zahl " + originBaseNumber.toUpperCase() + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase + "<br/>");
-	addTextToExcerciseSolution(numberSytems.numberWithBaseToBase(originBaseNumber, originBase, newBase).toUpperCase());
+	addTextToExcerciseSolution(numberSytems.numberWithBaseToBase(originBaseNumber, originBase, newBase).toUpperCase()+"<sub>"+ newBase +"</sub>");
 }
 
 function ieeExercise(){
