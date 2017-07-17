@@ -11,7 +11,7 @@ function addTextToExcerciseSolution(newText){
 
 function numberSystemExercise(){
 	var number = randomizer.randomNumber(20,200);
-	var originBase = randomizer.randomNumber(1, 16);
+	var originBase = randomizer.randomNumber(2, 16);
 	var originBaseNumber = numberSytems.decimalToBase(number, originBase);
 	var newBase = randomizer.randFromArray([2, 4, 8, 10, 16]);
 	while(newBase == originBase){
@@ -22,8 +22,8 @@ function numberSystemExercise(){
 	// originBase = 6;
 	// newBase = 10;
 
-	addTextToExcercise("Die Zahl " + originBaseNumber + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase + "<br/>");
-	addTextToExcerciseSolution(numberSytems.numberWithBaseToBase(originBaseNumber, originBase, newBase));
+	addTextToExcercise("Die Zahl " + originBaseNumber.toUpperCase() + "<sub>" + originBase + "</sub> soll in eine Zahl umgerechnet werden mit der Basis " + newBase + "<br/>");
+	addTextToExcerciseSolution(numberSytems.numberWithBaseToBase(originBaseNumber, originBase, newBase).toUpperCase());
 }
 
 function ieeExercise(){
@@ -69,6 +69,25 @@ function binExercise(){
 	}
 }
 
+function binCommaExercise(){
+	// Rand Number
+	var n = randomizer.randomNumber(1,100);
+	if(randomizer.randomNumber(1,2) == 1){
+		n = -n;
+	}
+	n = n + randomizer.niceRandomCommaNumber();
+	if(randomizer.randomYesNo()){
+
+		addTextToExcercise("Dezimal zu Bin&auml;r<br/>");
+		addTextToExcercise(n + "<br/>");
+		addTextToExcerciseSolution(numberSytems.decimalToBase(n, 2) + "<br/>");
+	}else{
+		addTextToExcercise("Bin&auml;r zu Dezimal<br/>");
+		addTextToExcercise(numberSytems.decimalToBase(n, 2) + "<br/>");
+		addTextToExcerciseSolution(n + "<br/>");
+	}
+}
+
 function twosComplementExercise(bit, max){
 	// Rand Number
 	var n = randomizer.randomNumber(1,max);
@@ -94,19 +113,22 @@ function addExerciseTitle(title){
 function newExercises(){
 	clearExercise();
 
-	addExerciseTitle("Aufgabe 1 - Zahlensysteme:");
+	addExerciseTitle("Aufgabe 1) Zahlensysteme:");
 	numberSystemExercise();
 
-	addExerciseTitle("Aufgabe 2 - Bin&auml;r - Dezimal:");
+	addExerciseTitle("Aufgabe 2a) Bin&auml;r - Dezimal:");
 	binExercise();
 
-	addExerciseTitle("Aufgabe 3 - Zweierkomplement (8bit):");
+	addExerciseTitle("Aufgabe 2b) Bin&auml;r - Dezimal mit Komma:");
+	binCommaExercise();
+
+	addExerciseTitle("Aufgabe 3a) Zweierkomplement (8bit):");
 	twosComplementExercise(8, 100);
 
-	addExerciseTitle("Aufgabe 4 - Zweierkomplement (16bit):");
+	addExerciseTitle("Aufgabe 3b) Zweierkomplement (16bit):");
 	twosComplementExercise(16, 1000);
 
-	addExerciseTitle("Aufgabe 5 - IEEE 754:");
+	addExerciseTitle("Aufgabe 4) IEEE 754:");
 	ieeExercise();
 }
 function showSolutions(){
