@@ -113,14 +113,15 @@ function addExerciseTitle(title){
 function newExercises(){
 	clearExercise();
 
-	addExerciseTitle("Aufgabe 1) Zahlensysteme:");
-	numberSystemExercise();
-
-	addExerciseTitle("Aufgabe 2a) Bin&auml;r - Dezimal:");
+	addExerciseTitle("Aufgabe 1a) Bin&auml;r - Dezimal:");
 	binExercise();
 
-	addExerciseTitle("Aufgabe 2b) Bin&auml;r - Dezimal mit Komma:");
+	addExerciseTitle("Aufgabe 1b) Bin&auml;r - Dezimal mit Komma:");
 	binCommaExercise();
+
+
+	addExerciseTitle("Aufgabe 2) Zahlensysteme:");
+	numberSystemExercise();
 
 	addExerciseTitle("Aufgabe 3a) Zweierkomplement (8bit):");
 	twosComplementExercise(8, 100);
